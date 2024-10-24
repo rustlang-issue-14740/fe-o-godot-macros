@@ -1,0 +1,15 @@
+#cargo-features = ["edition2024"]
+
+[package]
+name = "fe-o-godot-macros"
+version = "0.0.1"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+godot           = { git = "https://github.com/0x53A/gdext", branch = "dev-multiple-impl-blocks" }
+proc-macro2     = "1.0.80"
+quote           = "1.0.29"
+venial          = "0.6"
