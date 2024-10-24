@@ -338,11 +338,11 @@ impl Player {
 
 ## Status and what doesn't work
 
-This is quite early and still in a rough state. It requires a fork of gdext to support multiple impl blocks (https://github.com/godot-rust/gdext/pull/927).
-The macro generates a few warnings which I haven't yet bothered to supress.
-It currently assumes all ``fn`s have a mutable self.
-It breaks hot reloading.
-Etc...
+This is quite early and still in a rough state. It requires a fork of gdext to support multiple impl blocks (https://github.com/godot-rust/gdext/pull/927).  
+The macro generates a few warnings which I haven't yet bothered to supress.  
+It currently assumes all ``fn`s have a mutable self.  
+It breaks hot reloading.  
+Etc...  
 
 But ... it works!
 
