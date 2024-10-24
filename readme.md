@@ -3,14 +3,14 @@
 Two macros, one gets applied to a trait definition, the other to the impl block of the godot class implementing the trait
 
 ```rust
-#[rustato_macro::wrap_trait]
+#[fe_o_godot_macros::wrap_trait]
 trait MyTrait {
     fn foo();
 }
 
 // -------------------------------
 
-#[rustato_macro::godot_virtual_dispatch]
+#[fe_o_godot_macros::godot_virtual_dispatch]
 impl MyTrait for MyCustomNodeClass {
     fn foo(&mut self) {
         bar();
@@ -50,7 +50,7 @@ pub struct DamageInfo {
     pub by_source: DamageSource
 }
 
-#[rustato_macro::wrap_trait]
+#[fe_o_godot_macros::wrap_trait]
 pub trait Hittable {
     fn hit(&mut self, dmg: DamageInfo);
 }
@@ -64,7 +64,7 @@ pub struct Health {
     pub max_health : u32
 }
 
-#[rustato_macro::wrap_trait]
+#[fe_o_godot_macros::wrap_trait]
 pub trait Healthy {
     fn get_health(&mut self) -> Health;
 }
@@ -90,7 +90,7 @@ pub struct Player {
     base: Base<Area2D>
 }
 
-#[rustato_macro::godot_virtual_dispatch]
+#[fe_o_godot_macros::godot_virtual_dispatch]
 impl Hittable for Player {
     fn hit(&mut self, dmg: crate::traits::DamageInfo) {
         self.current_health = self.current_health.saturating_sub(dmg.by_source.amount);
@@ -101,7 +101,7 @@ impl Hittable for Player {
 }
 
 
-#[rustato_macro::godot_virtual_dispatch]
+#[fe_o_godot_macros::godot_virtual_dispatch]
 impl Healthy for Player {
     fn get_health(&mut self) -> Health {
         return Health { current_health: self.current_health, max_health: self.max_health };
@@ -340,7 +340,7 @@ impl Player {
 
 This is quite early and still in a rough state. It requires a fork of gdext to support multiple impl blocks (https://github.com/godot-rust/gdext/pull/927).  
 The macro generates a few warnings which I haven't yet bothered to supress.  
-It currently assumes all ``fn`s have a mutable self.  
+It currently assumes all ``fn``s have a mutable self.  
 It breaks hot reloading.  
 Etc...  
 
