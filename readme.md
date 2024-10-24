@@ -1,3 +1,7 @@
+
+> [!WARNING]  
+> This requires the new WIP feature [multiple impl blocks](https://github.com/godot-rust/gdext/pull/927) which is why this package references my github branch.
+
 # Helper macros for inter-node communication with Godot Rust 4.x GDExt
 
 Two macros, one gets applied to a trait definition, the other to the impl block of the godot class implementing the trait
