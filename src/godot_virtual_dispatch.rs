@@ -50,9 +50,9 @@ pub fn godot_virtual_dispatch(meta: TokenStream, input: TokenStream) -> Result<T
         impl #class_name {
             
             #[func]
+            #[allow(non_snake_case)]
             pub fn #fn_name(&mut self) -> Gd<#wrapper_struct_path> {
-                let wrapped = #wrapper_struct_path { other: Box::new(self.to_gd()) };
-                return Gd::from_object(wrapped);
+                Gd::from_init_fn(|base| #wrapper_struct_path::real_init(base, Box::new(self.to_gd())))
             }
         }
     };
