@@ -63,6 +63,7 @@ pub fn wrap_trait(meta: TokenStream, input: TokenStream) -> Result<TokenStream, 
 
 
                 let _3 = quote! {
+                    #[allow(unused)]
                     fn #function_name(#params) -> #return_ty {
                         panic!(#warning_str);
                     }
