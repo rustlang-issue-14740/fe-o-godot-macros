@@ -9,7 +9,7 @@ edition = "2021"
 proc-macro = true
 
 [dependencies]
-godot           = { git = "https://github.com/0x53A/gdext", branch = "dev-multiple-impl-blocks", features = ["experimental-wasm", "lazy-function-tables"] }
+godot           = { git = "https://github.com/0x53A/gdext", branch = "__work", features = ["experimental-wasm", "lazy-function-tables"] }
 proc-macro2     = "1.0.80"
 quote           = "1.0.29"
 venial          = "0.6"
