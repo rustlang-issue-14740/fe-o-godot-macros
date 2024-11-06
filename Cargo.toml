@@ -12,4 +12,4 @@ edition = "2021"
 godot           = { git = "https://github.com/rustlang-issue-14740/gdext", branch = "master" }
 proc-macro2     = "1.0.80"
 quote           = "1.0.29"
-#venial          = "0.6"
+venial          = "0.6"
